@@ -8,7 +8,7 @@ const NavItemSubList = props => {
       <div key={children.Id}>
         <Link onClick={()=>props.goPage(props.mainData.Id, props.mainData.Id, children.Count, 'active', 'active')}
           className={children.Count?'dropdown-item dropdown-toggle dropright':'dropdown-item'}
-          key={children.Id} to={children.Link ? children.Link : ''} >
+          key={children.Id} to={children.Link ? `/${children.Link}?Title=${children.Name}` : ''} >
           {children.Name}
         </Link>
       </div>
@@ -26,7 +26,7 @@ const NavItemList = props => {
           props.goPage(props.data.Id, props.data.Id, children.Count, 'active','')
           }
           className={children.Count?'dropdown-item dropdown-toggle dropright':'dropdown-item'}
-          key={children.Id} to={children.Children.length?'':children.Link} >
+          key={children.Id} to={children.Children.length?'':`/${children.Link}`} >
           {children.Name}
         </Link>
         <div className={(props.menu.menusubstep === children.Id)?'menu-sub show':'menu-sub'} aria-labelledby="navbarDropdown">

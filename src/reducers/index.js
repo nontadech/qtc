@@ -6,11 +6,13 @@ import { combineReducers } from 'redux'
 import menuReducer from './menuReducer'
 import userReducer from './userReducer'
 import subdocReducer from './subdocReducer'
+import prReducer from './prReducer'
 
 const rootReducers = combineReducers({
     menuReducer,
     userReducer,
-    subdocReducer
+    subdocReducer,
+    prReducer
 })
 
 export default rootReducers

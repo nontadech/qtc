@@ -33,12 +33,13 @@ class ApprovePage extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { ex: [] };
+    this.state = { ex: [],exShow:[] };
   //  this.setInputState = this.setInputState.bind(this);
   }
 
   show  = () =>{
     console.log(this.state.ex)
+    this.setState({exShow:this.state.ex})
   }
     handleSubmit = (evt) =>{
         var files = evt.target.files; // FileList object
@@ -56,14 +57,14 @@ class ApprovePage extends Component {
               // Here is your object
               var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
               var json_object = JSON.stringify(XL_row_object);
-              JSON.parse(json_object).forEach((data,index, array) =>{
+           //   JSON.parse(json_object).forEach((data,index, array) =>{
                 //console.log(data);
 
 
                   this.setState(prevState => ({
-                    ex: [...prevState.ex, data]
+                    ex: [...prevState.ex, XL_row_object]
                   }))
-              })
+            //  })
 
             })
           };
@@ -86,8 +87,40 @@ class ApprovePage extends Component {
 
 
     render(){
+      const { ex } = this.state
+      console.log(ex)
+      let j =0
+      let k =0
         return(
             <div>
+              <div>{ex.map(e=>{
+                
+                j++
+                  
+                    return (
+                      <div key={`zx${j}`}>
+                          {e.map(r=>{
+                            k++
+                            return (
+                              <div key={`x${k}`}>
+                              {j===1 ? (
+                                  <div>{j}-{k}-{r.Name}-{r.Description}</div>
+                              ):(
+                                <div>{j}-{k}-{r.Name}-{r.UnitPrice}</div>
+                              )}
+                              
+                              </div>
+                            )
+                            
+                          })}
+                      </div>
+                    )
+                    
+                
+                
+              }
+
+              )}</div>
                 <input type="file" id="input" onChange={(e) => this.handleSubmit(e)} />
                 <button onClick={this.show} >Show Data</button>
             </div>

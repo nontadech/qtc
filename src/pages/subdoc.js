@@ -34,7 +34,7 @@ class Home extends Component {
       id:0,
       typedata:'New',
       showhide:'Hide',
-      ac_tab_footer:'tab1'
+      ac_tab_footer:'tab2'
     }
   }
 
@@ -101,7 +101,6 @@ class Home extends Component {
 */
   saveData = (values) => {
     this.props.dispatch(SubDocSave(values)).then(() => {
-    
       if (!this.props.subdocSave.isRejected) {
          //message.success('บันทึกข้อมูลเสร็จเรียบร้อย');
          Modal.success({
@@ -244,7 +243,7 @@ ShowTabFooter = (tab) => {
              return <div className="alert alert-danger">Error: {data}</div>
          }
          
-         if (isLoading || isLoadingSubdoc || isLoadingEdit || !data || !dataSubdoc || !dataEdit) {
+         if (!dataSubdoc || isLoading || isLoadingSubdoc || isLoadingEdit || !data || !dataEdit) {
              return <div className="example"><Spin size="large" /></div>
          }
 

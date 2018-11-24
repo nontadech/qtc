@@ -9,20 +9,22 @@ import Menu from './pages/menu'
 import IndexPage from './pages/index'
 import PR from './pages/pr'
 import SubDoc from './pages/subdoc'
-import ApprovePage from './pages/approve'
-
+import Approve from './pages/approve'
+import Home from './pages/home'
+import Bidding from './pages/bidding'
 
 const routes = [{
     path : '/',
     component : App,
-    indexRoute : { component : PR },
+    indexRoute : { component : Home },
     childRoutes : [
-        { path : 'turnover/detail/:id', component: forgotPass },
+        { path : 'pr/:id', component: PR },
         { path : 'user', component: User },
         { path : 'menu', component: Menu },
         { path : 'DocAutorun', component: SubDoc },
-        { path : 'approve', component: ApprovePage },
-
+        { path : 'Approve', component:Approve},
+        { path : 'Bidding', component:Bidding}
+  
   ]
 }]
 

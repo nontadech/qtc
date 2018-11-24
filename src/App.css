@@ -732,8 +732,8 @@ html [type="button"] {
 }
 
 th{
-  background-color: #edd00d !important;
-  color: #000000 !important;
+  background-color: #0a7bc2 !important;
+  color: #fff !important;
   font-size: 12px !important;
 }
 
@@ -921,6 +921,10 @@ cursor: pointer;
   overflow: auto;
 }
 
+.bdTree{
+  border: #cccccc 1px solid
+}
+
 .items_left{
   display: inline-block;
   text-align: left;
@@ -1024,7 +1028,61 @@ cursor: pointer;
 }
 
 .ant-row{
-  margin-bottom: 0px !important
+  margin-bottom: 0px !important;
+  margin-top: 1px !important
+}
+.ant-form-item-label {
+  text-align: right;
+  vertical-align: middle;
+  line-height: 30.9999px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ant-form-item-control {
+  line-height: 30.9999px;
+  position: relative;
+  zoom: 1;
+}
+/*
+fieldset {
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 2px groove (internal value);
+}
+.legend1
+{
+  margin-bottom:0px;
+  margin-left:16px;
+}
+
+.fieldset1
+{
+    border:2px solid green;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+}
+*/
+fieldset
+{
+  background:transparent;
+  border:1px solid #cccccc;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+
+  padding:16px;
+}
+legend{
+  font-size: 14px;
+  margin-bottom:0px;
+  margin-left:16px;
 }
 /*
 input{
@@ -1048,6 +1106,8 @@ td{
   padding: 3px !important;
   margin: 3px !important;
 }
+
+
 /*
 th{
   text-align: center !important;
@@ -1071,6 +1131,97 @@ td{
   to { transform: rotate(360deg); }
 }
 
+.tablename{
+  border: #16181b 1px solid;
+  width: 100%
+}
+
+
+
+#table01 td{
+  height: 30px;
+  border-right: #d4d5d2 1px dotted;
+}
+
+#table01 th{
+  height: 35px !important;
+}
+
+
+#table01 tr{
+  height: 30px;
+  background-color: #ffffff;
+  border-bottom: #d4d5d2 1px dotted;
+  border-right: #d4d5d2 1px dotted;
+  transition: 0.1s
+}
+#table01 tr:hover{
+
+  background-color: #e9f5fc;
+  border-bottom: #0482ab 1px solid;
+  border-top: #0482ab 1px solid;
+
+}
+
+.inputItem{
+  border: transparent !important;
+  cursor: pointer;
+  height: 29px;
+  background: transparent
+}
+
+#table01 .ant-select-selection {
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: transparent;
+  box-sizing: border-box;
+  display: block;
+  background-color:transparent;
+  border-radius: 0px;
+  border: 0px solid #d9d9d9;
+
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.inputItem2{
+  border: #096aa2 1px solid !important;
+  border-radius: 4px;
+  height: 29px;
+  text-align: center;
+}
+#table01 .ant-select-selection:hover {
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  box-sizing: border-box;
+  display: block;
+  background-color:#35b3f5;
+  border-radius: 0px;
+  border: 1px dotted #000000;
+  color: #000;
+
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+
+.PRRow{
+  background-color: #096aa2 !important
+}
+
+.PRRow:hover{
+  background-color:#edd00d !important
+}
+
+.inputItem:focus{
+  background-color: #c8ebfb;
+}
 .ant-calendar-picker-clear, .ant-calendar-picker-icon {
   position: absolute;
   width: 14px;

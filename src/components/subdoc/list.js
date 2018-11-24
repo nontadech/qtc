@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 
-import { DatePicker,Button,Popconfirm,Select,Table, Form,Input,Icon,Tooltip,Row, Col } from 'antd';
+import { Popconfirm,Table,Icon,Tooltip } from 'antd';
 
-import locale from 'antd/lib/date-picker/locale/th_TH';
 
 
 
