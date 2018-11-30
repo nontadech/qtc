@@ -4,6 +4,8 @@ import MenuTop from './menu/menutoplist'
 import MenuNotifi from './menu/Menunotifi'
 import MenuSetting from './menu/Menusetting'
 import { Menu, Badge, Icon } from 'antd'
+import Notification from './notification'
+
 class Header extends Component {
 
 
@@ -31,6 +33,7 @@ class Header extends Component {
         isToggleOn: !prevState.isToggleOn
       }));
     }
+
 
 
     goPageSub = (id) => {
@@ -66,11 +69,61 @@ class Header extends Component {
       this.setState(this.props.menu)
     }
 
+    sumChildren = (obj, sum = 0) => {
+      if(typeof obj.length == 'undefined'){
+        sum += obj.sum;
+      }else{
+        obj.map((p, c) => {
+          sum += p.sum;
+          if(typeof p.children !== 'undefined' && p.children.length){
+            return sum = this.sumChildren(p.children, sum)
+          }else{
+            return sum
+          }
+        })
+      }
+      if(typeof obj.children !== 'undefined' && obj.children.length){
+        return this.sumChildren(obj.children, sum)
+      }else{
+        return sum
+      }
+    }
+
+
     render(){
-     
+      let sum = 0;
+      const number = {
+        title:'Project1',
+        sum:101,
+        children:[{
+          title:'Project1-1',
+          sum:102,
+          children:[{
+            title:'Project1-1-1',
+            sum:103,
+            children:[]
+          }]
+        },{
+          title:'project1-2',
+          sum:104,
+          children:[{
+            title:'Project1-2-1',
+            sum:105,
+            children:[{
+              title:'Project1-2-1-1',
+              sum:106,
+              children:[]
+            }]
+          }]
+        }]
+      }
+      var result = this.sumChildren(number, sum);
+      console.log('sum', result);
       const { dataMenu } = this.props
 
-      
+      let notification = new Notification();
+      notification.Server();
+
       const classDropdownMenuTop = 'navbar-collapse collapse' + (this.state.isToggleOn ? ' show' : '')
       return (
         <div id="headerTop">

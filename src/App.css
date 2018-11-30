@@ -2020,3 +2020,32 @@ a.dropdown-item:focus, a.dropdown-item:hover{
   display: none;
 }
 /*# sourceMappingURL=bootstrap.css.map */
+#tasks {
+  max-height: 540px;
+}
+#tasks .dx-treelist-rowsview td {
+  vertical-align: middle;
+}
+.img,
+.name {
+  display: inline-block;
+  vertical-align: middle;
+}
+.img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 25px;
+  border: 1px solid lightgray;
+  background-color: #fff;
+}
+.dx-treelist-headers .dx-header-row > .dx-treelist-select-all {
+    padding-left: 44px !important;
+}
+.dx-treelist-container,
+.dx-toolbar{
+  background-color: transparent !important;
+}
